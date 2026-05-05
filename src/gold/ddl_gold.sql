@@ -9,6 +9,8 @@ Script Purpose:
     to produce a clean, enriched, and business-ready dataset.
 ===============================================================================
 */
+USE DataWarehouse;
+GO
 
 -- =============================================================================
 -- Create Dimension: gold.dim_customers
@@ -84,3 +86,7 @@ FROM silver.crm_sales_details sd
 LEFT JOIN gold.dim_products pr ON sd.sls_prd_key = pr.product_number
 LEFT JOIN gold.dim_customers cu ON sd.sls_cust_id = cu.customer_id
 GO
+
+SELECT * FROM gold.dim_customers;
+SELECT * FROM gold.dim_products;
+SELECT * FROM gold.fact_sales;

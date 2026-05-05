@@ -8,9 +8,17 @@ Script Purpose:
     - Truncates the bronze tables before loading data.
     - Uses the `BULK INSERT` command to load data from csv Files to bronze tables.
 Usage Example:
+    SELECT TOP 10 * FROM bronze.crm_cust_info;
+    SELECT TOP 10 * FROM bronze.crm_prd_info;
+    SELECT TOP 10 * FROM bronze.crm_sales_details;
+    SELECT TOP 10 * FROM bronze.erp_cust_az12;
+    SELECT TOP 10 * FROM bronze.erp_loc_a101;
+    SELECT TOP 10 * FROM bronze.erp_px_cat_g1v2;
     EXEC bronze.load_bronze;
 ===============================================================================
 */
+USE DataWarehouse;
+GO
 
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN

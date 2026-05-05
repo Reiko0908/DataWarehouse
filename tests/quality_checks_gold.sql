@@ -10,6 +10,8 @@ Script Purpose:
     - Validation of relationships in the data model for analytical purposes.
 ===============================================================================
 */
+USE DataWarehouse;
+GO
 
 -- ====================================================================
 -- Checking 'gold.dim_customers'
@@ -23,7 +25,7 @@ GROUP BY customer_key
 HAVING COUNT(*) > 1;
 
 -- ====================================================================
--- Checking 'gold.product_key'
+-- Checking 'gold.dim_products'
 -- ====================================================================
 -- Check for Uniqueness of Product Key
 SELECT

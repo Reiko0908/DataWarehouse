@@ -9,9 +9,17 @@ Script Purpose:
 		- Truncates Silver tables.
 		- Inserts transformed and cleansed data from Bronze into Silver tables.
 Usage Example:
+    SELECT * FROM silver.crm_cust_info;
+    SELECT * FROM silver.crm_prd_info;
+    SELECT * FROM silver.crm_sales_details;
+    SELECT * FROM silver.erp_cust_az12;
+    SELECT * FROM silver.erp_loc_a101;
+    SELECT * FROM silver.erp_px_cat_g1v2;
     EXEC Silver.load_silver;
 ===============================================================================
 */
+USE DataWarehouse;
+GO
 
 CREATE OR ALTER PROCEDURE silver.load_silver AS
 BEGIN
@@ -209,3 +217,4 @@ BEGIN
 		PRINT '=========================================='
 	END CATCH
 END
+
